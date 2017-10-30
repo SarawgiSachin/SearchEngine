@@ -11,7 +11,7 @@ class InvertedIndexTest {
     private Index invertedIndex = null;
 
     @Before
-    void setUp() {
+    public void setUp() {
         List<Website> sites = new ArrayList<>();
         sites.add(new Website("test1.com", "test1", Arrays.asList("word1", "word2")));
         sites.add(new Website("test2.com", "test2", Arrays.asList("word2", "word3")));
@@ -22,17 +22,17 @@ class InvertedIndexTest {
     }
 
     @After
-    void tearDown() {
+    public void tearDown() {
         invertedIndex = null;
     }
 
 
     @Test
-    void buildHashMapIndex() {
+    public void buildHashMapIndex() {
         assertEquals("InvertedIndex{invertedIndexMap={word1=[Website{url='test1.com'}], word3=[Website{url='test2.com'}], word2=[Website{url='test1.com'}, Website{url='test2.com'}]}}", invertedIndex.toString());
     }
     @Test
-    void lookupInvertedIndex() {
+    public void lookupInvertedIndex() {
         lookup(invertedIndex);
     }
 
